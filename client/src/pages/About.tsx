@@ -20,22 +20,23 @@ export default function About() {
             </h1>
             <div className="prose prose-invert prose-lg font-light text-muted-foreground leading-relaxed">
               <p className="mb-4">
-                I'm a creative developer obsessed with the intersection of aesthetics and engineering. 
-                I don't just write code; I craft digital experiences that leave a lasting impression.
+                I'm Nikhil Mana, an aspiring Machine Learning Engineer pursuing B.E. in Computer Science (AI & ML) 
+                at Maharaja Institute of Technology, Mysore. I'm passionate about building intelligent systems 
+                that solve real-world problems.
               </p>
               <p>
-                My philosophy is simple: <span className="text-primary font-bold">Make it pop.</span> 
-                Whether it's a 3D interactive scene or a robust backend API, I bring the same level 
-                of precision and flair to every layer of the stack.
+                My philosophy is simple: <span className="text-primary font-bold">Innovation through AI.</span> 
+                From winning TiE u Pitchfest 2025 with Sign Health to leading Python workshops for 50+ participants, 
+                I bring creativity and technical excellence to every project I undertake.
               </p>
             </div>
             
             {/* Stats / Traits */}
             <div className="grid grid-cols-3 gap-4 mt-8">
               {[
-                { label: "CREATIVITY", val: "LVL.99" },
-                { label: "LOGIC", val: "LVL.95" },
-                { label: "COFFEE", val: "INFINITE" }
+                { label: "HACKATHONS", val: "36+ HRS" },
+                { label: "CGPA", val: "8.0+" },
+                { label: "PROJECTS", val: "10+" }
               ].map((stat, i) => (
                 <div key={i} className="border border-white/10 p-4 text-center bg-white/5">
                   <div className="text-xs text-muted-foreground font-mono mb-1">{stat.label}</div>
@@ -105,7 +106,7 @@ export default function About() {
             <Code2 className="w-12 h-12 text-accent mb-4" />
             <h3 className="text-xl font-bold text-white mb-2 font-display">ALWAYS LEARNING</h3>
             <p className="text-sm text-muted-foreground font-mono">
-              Currently exploring WebGPU, Rust, and advanced GLSL shaders to push the boundaries of web graphics.
+              Currently exploring Agentic AI, advanced Deep Learning architectures, and Computer Vision to push the boundaries of intelligent systems.
             </p>
           </div>
         </div>

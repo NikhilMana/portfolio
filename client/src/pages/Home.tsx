@@ -18,13 +18,13 @@ export default function Home() {
         >
           <div className="flex items-center justify-center gap-2 text-primary font-mono mb-4 text-sm md:text-base bg-primary/10 border border-primary/20 px-4 py-1 w-fit mx-auto backdrop-blur-md">
             <Terminal size={14} />
-            <span>FULLSTACK_CREATIVE.TSX</span>
+            <span>ML_ENGINEER.AI</span>
           </div>
           
           <h1 className="text-5xl md:text-8xl font-black tracking-tighter leading-tight font-display text-white mix-blend-screen">
-            <GlitchText text="DIGITAL" /> <br />
+            <GlitchText text="NIKHIL" /> <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-accent animate-pulse">
-              ALCHEMIST
+              MANA
             </span>
           </h1>
         </motion.div>
@@ -35,8 +35,8 @@ export default function Home() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="text-muted-foreground text-lg md:text-xl font-light max-w-2xl font-mono leading-relaxed"
         >
-          Building immersive web experiences where <span className="text-white">design</span> meets <span className="text-secondary">code</span>. 
-          Ready to break the simulation?
+          Aspiring <span className="text-white">Machine Learning Engineer</span> building intelligent systems with <span className="text-secondary">AI & Computer Vision</span>. 
+          Ready to transform ideas into reality?
         </motion.p>
 
         <motion.div
@@ -57,8 +57,8 @@ export default function Home() {
 
       <div className="absolute bottom-8 left-8 hidden md:block">
         <div className="text-xs font-mono text-muted-foreground flex flex-col gap-1">
-          <span>COORDS: 34.0522° N, 118.2437° W</span>
-          <span>SYSTEM: ONLINE</span>
+          <span>LOCATION: Bidar, Karnataka</span>
+          <span>STATUS: ONLINE</span>
         </div>
       </div>
     </div>

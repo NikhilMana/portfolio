@@ -64,11 +64,11 @@ export default function Contact() {
             </div>
 
             <div className="space-y-4">
-              <a href="mailto:hello@vibe.dev" className="flex items-center gap-4 text-white hover:text-primary transition-colors group">
+              <a href="mailto:nikhilmana22@gmail.com" className="flex items-center gap-4 text-white hover:text-primary transition-colors group">
                 <div className="w-12 h-12 glass-panel flex items-center justify-center border border-white/10 group-hover:border-primary">
                   <Mail className="w-5 h-5" />
                 </div>
-                <span className="font-mono text-lg">hello@vibe.dev</span>
+                <span className="font-mono text-lg">nikhilmana22@gmail.com</span>
               </a>
             </div>
 
@@ -76,9 +76,9 @@ export default function Contact() {
               <h3 className="text-sm font-mono text-muted-foreground mb-4 uppercase tracking-widest">Social Uplinks</h3>
               <div className="flex gap-4">
                 {[
-                  { icon: Github, href: "https://github.com" },
+                  { icon: Github, href: "https://github.com/NikhilMana" },
                   { icon: Twitter, href: "https://twitter.com" },
-                  { icon: Linkedin, href: "https://linkedin.com" }
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/nikhil-mana-078a732a7/" }
                 ].map((social, i) => (
                   <a 
                     key={i} 
