@@ -11,16 +11,8 @@ export default function Home() {
       <div className="relative w-full h-screen flex items-center justify-center">
         <Scene />
 
-        {/* Background Image Overlay */}
-        <div
-          className="absolute inset-0 z-0 opacity-20"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black z-[1]" />
+        {/* Gradient overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black z-[1]" />
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center gap-8">
           <motion.div
