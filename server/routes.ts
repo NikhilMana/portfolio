@@ -113,52 +113,98 @@ export async function registerRoutes(
 async function seedDatabase() {
   const skills = await storage.getSkills();
   if (skills.length === 0) {
-    await storage.createSkill({ name: "React", category: "Frontend", proficiency: 90 });
-    await storage.createSkill({ name: "Three.js", category: "Creative", proficiency: 85 });
-    await storage.createSkill({ name: "TypeScript", category: "Languages", proficiency: 88 });
-    await storage.createSkill({ name: "Node.js", category: "Backend", proficiency: 80 });
+    // Languages
+    await storage.createSkill({ name: "Python", category: "Languages", proficiency: 95 });
+    await storage.createSkill({ name: "Java", category: "Languages", proficiency: 85 });
+    await storage.createSkill({ name: "C", category: "Languages", proficiency: 80 });
+    await storage.createSkill({ name: "JavaScript", category: "Languages", proficiency: 88 });
+
+    // ML/AI
+    await storage.createSkill({ name: "TensorFlow", category: "ML/AI", proficiency: 90 });
+    await storage.createSkill({ name: "OpenCV", category: "ML/AI", proficiency: 88 });
+    await storage.createSkill({ name: "Machine Learning", category: "ML/AI", proficiency: 92 });
+    await storage.createSkill({ name: "Deep Learning", category: "ML/AI", proficiency: 90 });
+    await storage.createSkill({ name: "Computer Vision", category: "ML/AI", proficiency: 88 });
+
+    // Tools
+    await storage.createSkill({ name: "Git/GitHub", category: "Tools", proficiency: 90 });
+    await storage.createSkill({ name: "Jupyter", category: "Tools", proficiency: 85 });
+    await storage.createSkill({ name: "VS Code", category: "Tools", proficiency: 95 });
+    await storage.createSkill({ name: "Docker", category: "Tools", proficiency: 75 });
+    await storage.createSkill({ name: "Linux", category: "Tools", proficiency: 80 });
+
+    // Core
+    await storage.createSkill({ name: "Data Structures & Algorithms", category: "Core", proficiency: 88 });
+    await storage.createSkill({ name: "OOP", category: "Core", proficiency: 90 });
+    await storage.createSkill({ name: "Database Management", category: "Core", proficiency: 85 });
+    await storage.createSkill({ name: "Agile Development", category: "Core", proficiency: 82 });
   }
+
 
   const exp = await storage.getExperience();
   if (exp.length === 0) {
     await storage.createExperience({
-      title: "Senior Frontend Developer",
-      company: "Tech Corp",
-      period: "2023 - Present",
-      description: "Leading the frontend team and building immersive web experiences."
-    });
-    await storage.createExperience({
-      title: "Creative Coder",
-      company: "Freelance",
-      period: "2021 - 2023",
-      description: "Developed 3D websites and interactive installations for clients."
+      title: "Mobile App Development Intern",
+      company: "RunShaw Technologies Pvt. Ltd.",
+      period: "Jul–Aug 2024",
+      description: "Developed PDF Merger Android app using Kotlin and Android SDK. Implemented secure file access, background processing, and multi-version support. Tech: Kotlin, Android SDK, Flutter, Git"
     });
   }
 
   const edu = await storage.getEducation();
   if (edu.length === 0) {
     await storage.createEducation({
-      degree: "BSc Computer Science",
-      school: "University of Tech",
-      year: "2021"
+      degree: "B.E. Computer Science (AI & ML)",
+      school: "Maharaja Institute of Technology, Mysore",
+      year: "Expected 2027 | CGPA: 8.0+"
     });
   }
 
   const projects = await storage.getProjects();
   if (projects.length === 0) {
+    // 1st - Sign Health (Winner project)
     await storage.createProject({
-      title: "Neon Portfolio",
-      description: "A rave-themed portfolio website with 3D elements.",
-      techStack: ["React", "Three.js", "PostgreSQL"],
-      imageUrl: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80",
-      link: "https://github.com"
+      title: "Sign Health - Healthcare Communication System",
+      description: "🥇 TiE u Pitchfest 2025 Winner. ML-powered real-time sign language interpretation system for healthcare settings. Trained CNN models achieving 85%+ accuracy in gesture recognition, enabling seamless communication between healthcare providers and hearing-impaired patients.",
+      techStack: ["Python", "TensorFlow", "OpenCV", "Computer Vision", "Deep Learning", "CNN"],
+      imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80",
+      link: "https://github.com/NikhilMana"
     });
+
+    // 2nd - E-commerce Shopping Agent (NEW - Your requested position)
     await storage.createProject({
-      title: "E-Commerce Dashboard",
-      description: "Real-time analytics dashboard for online stores.",
-      techStack: ["Next.js", "Drizzle", "Tailwind"],
+      title: "E-commerce Shopping Agent with AI Assistant",
+      description: "Production-ready full-stack e-commerce platform with AI-powered shopping assistance using Google Gemini. Features role-based authentication, real-time order tracking, advanced product filtering, voice search, dark mode, and comprehensive analytics dashboard. Built with FastAPI backend and vanilla JavaScript frontend with 50+ AI agent tools.",
+      techStack: ["Python", "FastAPI", "JavaScript", "Google Gemini", "SQLite", "Machine Learning", "REST API", "HTML5", "CSS3"],
+      imageUrl: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80",
+      link: "https://github.com/NikhilMana"
+    });
+
+    // 3rd - Interactive Web Applications
+    await storage.createProject({
+      title: "Interactive Web Applications",
+      description: "Developed responsive, modern web applications with React and JavaScript. Built RESTful APIs with Node.js and Express.js, implementing full-stack solutions with clean architecture and best practices.",
+      techStack: ["React", "JavaScript", "Node.js", "Express.js", "HTML5", "CSS3", "REST API"],
       imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
-      link: "https://github.com"
+      link: "https://github.com/NikhilMana"
+    });
+
+    // 4th - Hackathon Participant
+    await storage.createProject({
+      title: "Hackathon Participant - Shrishti & Hacksprint",
+      description: "Participated in multiple intensive hackathons including Shrishti (36 hours) and Hacksprint (24 hours), collaborating with teams to build innovative solutions under tight deadlines. Demonstrated problem-solving skills and rapid prototyping abilities.",
+      techStack: ["Python", "JavaScript", "Git", "Agile Development", "Team Collaboration"],
+      imageUrl: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80",
+      link: "https://github.com/NikhilMana"
+    });
+
+    // LAST - PDF Merger Android App (Moved to last position)
+    await storage.createProject({
+      title: "PDF Merger Android App",
+      description: "Professional Android application for merging PDF files with secure file access and background processing. Developed during internship at RunShaw Technologies with support for multiple Android versions and optimized performance.",
+      techStack: ["Kotlin", "Android SDK", "Material Design", "Git"],
+      imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80",
+      link: "https://github.com/NikhilMana"
     });
   }
 }

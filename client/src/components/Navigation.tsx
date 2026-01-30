@@ -17,28 +17,30 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center p-6 md:p-8 mix-blend-difference text-white">
       <Link href="/" className="text-2xl font-bold tracking-tighter hover:text-primary transition-colors duration-300 font-display uppercase">
-        VIBE<span className="text-primary">.DEV</span>
+        Nikhil<span className="text-primary"> Mana</span>
       </Link>
 
       {/* Desktop Nav */}
       <div className="hidden md:flex gap-8 items-center">
         {links.map((link) => (
-          <Link key={link.href} href={link.href}>
-            <div className={`relative cursor-pointer text-sm font-medium tracking-widest uppercase hover:text-primary transition-colors ${location === link.href ? "text-primary" : "text-white/80"}`}>
-              {link.label}
-              {location === link.href && (
-                <motion.div
-                  layoutId="underline"
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary shadow-[0_0_10px_#39FF14]"
-                />
-              )}
-            </div>
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`relative inline-block cursor-pointer text-sm font-medium tracking-widest uppercase hover:text-primary transition-colors ${location === link.href ? "text-primary" : "text-white/80"}`}
+          >
+            {link.label}
+            {location === link.href && (
+              <motion.div
+                layoutId="underline"
+                className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary shadow-[0_0_10px_#39FF14]"
+              />
+            )}
           </Link>
         ))}
       </div>
 
       {/* Mobile Menu Button */}
-      <button 
+      <button
         className="md:hidden p-2 hover:text-primary transition-colors"
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -55,13 +57,13 @@ export function Navigation() {
             className="absolute top-20 right-4 w-64 glass-panel p-6 flex flex-col gap-4 rounded-none border-l-4 border-primary shadow-[0_0_30px_rgba(0,0,0,0.5)] md:hidden"
           >
             {links.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <div 
-                  className={`text-xl font-bold uppercase tracking-wider cursor-pointer hover:text-primary hover:pl-2 transition-all duration-200 ${location === link.href ? "text-primary pl-2" : "text-white"}`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </div>
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`block text-xl font-bold uppercase tracking-wider cursor-pointer hover:text-primary hover:pl-2 transition-all duration-200 ${location === link.href ? "text-primary pl-2" : "text-white"}`}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
               </Link>
             ))}
           </motion.div>

@@ -1,18 +1,18 @@
-import { pgTable, text, serial, integer, timestamp, jsonb } from "drizzle-orm/pg-core";
+import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
 // === SKILLS ===
-export const skills = pgTable("skills", {
-  id: serial("id").primaryKey(),
+export const skills = sqliteTable("skills", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull(),
   category: text("category").notNull(), // e.g., "Frontend", "Backend", "Creative"
   proficiency: integer("proficiency").notNull(), // 0-100
 });
 
 // === EXPERIENCE ===
-export const experience = pgTable("experience", {
-  id: serial("id").primaryKey(),
+export const experience = sqliteTable("experience", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
   title: text("title").notNull(),
   company: text("company").notNull(),
   period: text("period").notNull(), // e.g., "2023 - Present"
@@ -20,30 +20,30 @@ export const experience = pgTable("experience", {
 });
 
 // === EDUCATION ===
-export const education = pgTable("education", {
-  id: serial("id").primaryKey(),
+export const education = sqliteTable("education", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
   degree: text("degree").notNull(),
   school: text("school").notNull(),
   year: text("year").notNull(),
 });
 
 // === PROJECTS ===
-export const projects = pgTable("projects", {
-  id: serial("id").primaryKey(),
+export const projects = sqliteTable("projects", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
   title: text("title").notNull(),
   description: text("description").notNull(),
-  techStack: jsonb("tech_stack").$type<string[]>().notNull(),
+  techStack: text("tech_stack", { mode: "json" }).$type<string[]>().notNull(),
   link: text("link"),
   imageUrl: text("image_url").notNull(),
 });
 
 // === CONTACT MESSAGES ===
-export const messages = pgTable("messages", {
-  id: serial("id").primaryKey(),
+export const messages = sqliteTable("messages", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull(),
   email: text("email").notNull(),
   message: text("message").notNull(),
-  createdAt: timestamp("created_at").defaultNow(),
+  createdAt: integer("created_at", { mode: 'timestamp' }).default(new Date()),
 });
 
 // === SCHEMAS ===

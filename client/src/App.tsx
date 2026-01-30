@@ -4,8 +4,6 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/Navigation";
-import { AnimatePresence } from "framer-motion";
-import { useLocation } from "wouter";
 
 // Pages
 import Home from "@/pages/Home";
@@ -15,18 +13,14 @@ import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 
 function Router() {
-  const [location] = useLocation();
-
   return (
-    <AnimatePresence mode="wait">
-      <Switch location={location} key={location}>
-        <Route path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/work" component={Work} />
-        <Route path="/contact" component={Contact} />
-        <Route component={NotFound} />
-      </Switch>
-    </AnimatePresence>
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/work" component={Work} />
+      <Route path="/contact" component={Contact} />
+      <Route component={NotFound} />
+    </Switch>
   );
 }
 

@@ -18,19 +18,37 @@ export default function About() {
             <h1 className="text-4xl md:text-6xl font-bold mb-8 font-display">
               <GlitchText text="WHO AM I?" />
             </h1>
+
+            {/* Profile Photo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              className="mb-8 flex justify-center lg:justify-start"
+            >
+              <div className="relative group">
+                <img
+                  src="/profile.jpg"
+                  alt="Nikhil Mana"
+                  className="w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-primary/30 shadow-2xl transition-all duration-300 group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(57,255,20,0.3)]"
+                />
+                <div className="absolute -inset-1 border border-white/20 group-hover:border-primary/50 -z-10 translate-x-2 translate-y-2 transition-all group-hover:translate-x-3 group-hover:translate-y-3" />
+              </div>
+            </motion.div>
+
             <div className="prose prose-invert prose-lg font-light text-muted-foreground leading-relaxed">
               <p className="mb-4">
-                I'm Nikhil Mana, an aspiring Machine Learning Engineer pursuing B.E. in Computer Science (AI & ML) 
-                at Maharaja Institute of Technology, Mysore. I'm passionate about building intelligent systems 
+                I'm Nikhil Mana, an aspiring Machine Learning Engineer pursuing B.E. in Computer Science (AI & ML)
+                at Maharaja Institute of Technology, Mysore. I'm passionate about building intelligent systems
                 that solve real-world problems.
               </p>
               <p>
-                My philosophy is simple: <span className="text-primary font-bold">Innovation through AI.</span> 
-                From winning TiE u Pitchfest 2025 with Sign Health to leading Python workshops for 50+ participants, 
+                My philosophy is simple: <span className="text-primary font-bold">Innovation through AI.</span>
+                From winning TiE u Pitchfest 2025 with Sign Health to leading Python workshops for 50+ participants,
                 I bring creativity and technical excellence to every project I undertake.
               </p>
             </div>
-            
+
             {/* Stats / Traits */}
             <div className="grid grid-cols-3 gap-4 mt-8">
               {[
@@ -51,13 +69,13 @@ export default function About() {
               <GraduationCap className="text-secondary w-8 h-8" />
               <h2 className="text-2xl font-bold text-white">Education</h2>
             </div>
-            
+
             <div className="space-y-6 relative border-l border-white/10 pl-8 ml-3">
               {educationLoading ? (
                 <div className="text-muted-foreground font-mono animate-pulse">Loading data source...</div>
               ) : (
                 education?.map((edu, i) => (
-                  <motion.div 
+                  <motion.div
                     key={edu.id}
                     initial={{ x: -20, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -80,14 +98,14 @@ export default function About() {
         {/* Right Column: Skills */}
         <div className="space-y-8">
           <section>
-             <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-8">
               <Cpu className="text-primary w-8 h-8" />
               <h2 className="text-2xl font-bold text-white">Tech Stack</h2>
             </div>
 
             {skillsLoading ? (
               <div className="grid grid-cols-2 gap-4">
-                {[1,2,3,4,5,6].map(i => (
+                {[1, 2, 3, 4, 5, 6].map(i => (
                   <div key={i} className="h-24 bg-white/5 animate-pulse border border-white/5" />
                 ))}
               </div>
