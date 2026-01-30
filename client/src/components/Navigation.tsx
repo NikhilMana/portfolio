@@ -15,7 +15,7 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center p-6 md:p-8 mix-blend-difference text-white">
+    <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center p-6 md:p-8 bg-black/80 backdrop-blur-md border-b border-white/5">
       <Link href="/" className="text-2xl font-bold tracking-tighter hover:text-primary transition-colors duration-300 font-display uppercase">
         Nikhil<span className="text-primary"> Mana</span>
       </Link>
